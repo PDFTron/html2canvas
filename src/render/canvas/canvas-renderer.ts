@@ -395,12 +395,14 @@ export class CanvasRenderer {
 
         if (isTextInputElement(container) && container.value.length) {
             const [fontFamily, fontSize] = this.createFontStyle(styles);
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             const {baseline} = this.fontMetrics.getMetrics(fontFamily, fontSize);
 
             this.ctx.font = fontFamily;
             this.ctx.fillStyle = asString(styles.color);
 
-            this.ctx.textBaseline = 'alphabetic';
+            this.ctx.textBaseline = 'middle';
             this.ctx.textAlign = canvasTextAlign(container.styles.textAlign);
 
             const bounds = contentBox(container);
@@ -427,13 +429,10 @@ export class CanvasRenderer {
             ]);
 
             this.ctx.clip();
-            this.renderTextWithLetterSpacing(
-                new TextBounds(container.value, textBounds),
-                styles.letterSpacing,
-                baseline
-            );
+            const text = new TextBounds(container.value, textBounds);
+            this.renderTextWithLetterSpacing(text, styles.letterSpacing, text.bounds.height);
             this.ctx.restore();
-            this.ctx.textBaseline = 'alphabetic';
+            this.ctx.textBaseline = 'bottom';
             this.ctx.textAlign = 'left';
         }
 
