@@ -6,6 +6,7 @@ import {
     isHTMLElementNode,
     isIFrameElement,
     isImageElement,
+    isInputElement,
     isScriptElement,
     isSelectElement,
     isStyleElement,
@@ -259,6 +260,11 @@ export class DocumentCloner {
                 (isTextareaElement(clone) || isSelectElement(clone))
             ) {
                 clone.value = node.value;
+            }
+
+            if (isInputElement(node) && node.checked) {
+                // required for IE9 and 10
+                clone.setAttribute('checked', 'checked');
             }
 
             return clone;

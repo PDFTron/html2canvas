@@ -12,6 +12,9 @@
     "email": "niklasvh@gmail.com",
     "url": "https://hertzen.com"
   },
+  "files": [
+    "dist/**/*.js"
+  ],
   "engines": {
     "node": ">=8.0.0"
   },
