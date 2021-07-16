@@ -402,7 +402,7 @@ export class CanvasRenderer {
             this.ctx.font = fontFamily;
             this.ctx.fillStyle = asString(styles.color);
 
-            this.ctx.textBaseline = 'alphabetic';
+            this.ctx.textBaseline = 'middle';
             this.ctx.textAlign = canvasTextAlign(container.styles.textAlign);
 
             const bounds = contentBox(container);
@@ -432,7 +432,7 @@ export class CanvasRenderer {
             const text = new TextBounds(container.value, textBounds);
             this.renderTextWithLetterSpacing(text, styles.letterSpacing, text.bounds.height);
             this.ctx.restore();
-            this.ctx.textBaseline = 'alphabetic';
+            this.ctx.textBaseline = 'bottom';
             this.ctx.textAlign = 'left';
         }
 

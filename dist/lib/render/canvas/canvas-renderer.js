@@ -374,7 +374,7 @@ var CanvasRenderer = /** @class */ (function () {
                             baseline = this.fontMetrics.getMetrics(fontFamily, fontSize).baseline;
                             this.ctx.font = fontFamily;
                             this.ctx.fillStyle = color_1.asString(styles.color);
-                            this.ctx.textBaseline = 'alphabetic';
+                            this.ctx.textBaseline = 'middle';
                             this.ctx.textAlign = canvasTextAlign(container.styles.textAlign);
                             bounds = box_sizing_1.contentBox(container);
                             x = 0;
@@ -398,7 +398,7 @@ var CanvasRenderer = /** @class */ (function () {
                             text = new text_1.TextBounds(container.value, textBounds);
                             this.renderTextWithLetterSpacing(text, styles.letterSpacing, text.bounds.height);
                             this.ctx.restore();
-                            this.ctx.textBaseline = 'alphabetic';
+                            this.ctx.textBaseline = 'bottom';
                             this.ctx.textAlign = 'left';
                         }
                         if (!bitwise_1.contains(container.styles.display, 2048 /* LIST_ITEM */)) return [3 /*break*/, 20];

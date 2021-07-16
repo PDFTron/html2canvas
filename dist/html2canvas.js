@@ -6552,7 +6552,7 @@
                                 this.fontMetrics.getMetrics(fontFamily, fontSize).baseline;
                                 this.ctx.font = fontFamily;
                                 this.ctx.fillStyle = asString(styles.color);
-                                this.ctx.textBaseline = 'alphabetic';
+                                this.ctx.textBaseline = 'middle';
                                 this.ctx.textAlign = canvasTextAlign(container.styles.textAlign);
                                 bounds = contentBox(container);
                                 x = 0;
@@ -6576,7 +6576,7 @@
                                 text = new TextBounds(container.value, textBounds);
                                 this.renderTextWithLetterSpacing(text, styles.letterSpacing, text.bounds.height);
                                 this.ctx.restore();
-                                this.ctx.textBaseline = 'alphabetic';
+                                this.ctx.textBaseline = 'bottom';
                                 this.ctx.textAlign = 'left';
                             }
                             if (!contains(container.styles.display, 2048 /* LIST_ITEM */)) return [3 /*break*/, 20];
