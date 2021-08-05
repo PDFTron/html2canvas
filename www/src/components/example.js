@@ -37,7 +37,6 @@ class CanvasContainer extends Component {
             >
                 <img
                     src={close}
-                    alt="Close"
                     css={{position: 'absolute', right: '20px', top: '20px', cursor: 'pointer'}}
                 />
             </div>
@@ -124,7 +123,6 @@ export default class Example extends Component {
                                     flex: 1,
                                     margin: 0
                                 }}
-                                alt="Try html2canvas"
                             />
                         </div>
                     </div>

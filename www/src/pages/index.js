@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import logo from '../images/logo_icon.svg';
-import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Carbon from '../components/carbon';
 
@@ -24,7 +23,6 @@ const linkStyle = {
 
 export default ({data}) => {
     return (
-        <Layout>
         <div
             css={{
                 background: '#558b2f',
@@ -50,7 +48,7 @@ export default ({data}) => {
                     }}
                 >
                     <div css={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <img src={logo} alt="html2canvas" />
+                        <img src={logo} />
                         <h1>html2canvas</h1>
                     </div>
                     <h4 css={{color: 'rgba(255, 255, 255, 0.6)', fontWeight: 300}}>
@@ -113,7 +111,7 @@ export default ({data}) => {
 
                     <div css={{margin: '20px'}}>
                         <a
-                            href="/documentation"
+                            href="#"
                             css={linkStyle}
                             onClick={e => {
                                 e.preventDefault();
@@ -196,7 +194,6 @@ export default ({data}) => {
                             <h5>Connect</h5>
                             <div css={{height: '35px'}}>
                                 <iframe
-                                    title="Github"
                                     src="https://ghbtns.com/github-btn.html?user=niklasvh&repo=html2canvas&type=star&count=true&size=large"
                                     frameBorder="0"
                                     scrolling="0"
@@ -220,7 +217,6 @@ export default ({data}) => {
             </div>
             <Footer />
         </div>
-        </Layout>
     );
 };
 

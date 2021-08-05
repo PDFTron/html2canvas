@@ -4,7 +4,6 @@ import back from '../images/ic_arrow_back_black_24px.svg';
 import next from '../images/ic_arrow_forward_black_24px.svg';
 import Carbon from '../components/carbon';
 import Footer from '../components/footer';
-import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Navigation from '../components/navigation';
 
@@ -12,7 +11,7 @@ export default ({data}) => {
     const post = data.markdownRemark;
 
     return (
-        <Layout>
+        <div>
             <Helmet
                 title={`${post.frontmatter.title} - html2canvas`}
                 meta={[{name: 'description', content: post.frontmatter.description}]}
@@ -104,7 +103,7 @@ export default ({data}) => {
                                         }}
                                     >
                                         <div css={{height: '24px'}}>
-                                            <img src={back} alt="" />
+                                            <img src={back} />
                                         </div>
                                         <div>
                                             <span
@@ -163,7 +162,7 @@ export default ({data}) => {
                                         </div>
 
                                         <div css={{height: '24px'}}>
-                                            <img src={next} alt="" />
+                                            <img src={next} />
                                         </div>
                                     </Link>
                                   : null}
@@ -172,7 +171,7 @@ export default ({data}) => {
                     : null}
                 <Footer css={{marginLeft: '300px'}} />
             </div>
-        </Layout>
+        </div>
     );
 };
 

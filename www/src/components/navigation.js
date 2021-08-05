@@ -61,7 +61,6 @@ export default class Navigation extends Component {
                     <img
                         src={menu}
                         onClick={() => this.setState(s => ({open: !s.open}))}
-                        alt="Menu"
                         css={{
                             width: '50px',
                             cursor: 'pointer',
@@ -73,7 +72,7 @@ export default class Navigation extends Component {
                         }}
                     />
                     <Link to="/">
-                        <img src={logo} css={{margin: 0}} alt="html2canvas" />
+                        <img src={logo} css={{margin: 0}} />
                     </Link>
                 </div>
 
